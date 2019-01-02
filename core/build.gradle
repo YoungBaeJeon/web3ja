@@ -47,15 +47,3 @@ configurations {
 artifacts {
     testArtifacts testJar
 }
-
-jar {
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
-//
-//task customFatJar(type: Jar) {
-//    baseName = 'web3j-core-dependancy.jar'
-//    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-//    with jar
-//}
